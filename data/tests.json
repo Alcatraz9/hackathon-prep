@@ -1,0 +1,15 @@
+{
+  "locators": {
+    "email_input": "#user-email-field",
+    "password_input": "#user-pass-field",
+    "submit_button": "#btn-do-signin",
+    "status_message": "#auth-status",
+    "fill-email": "#user-email-field",
+    "fill-password": "#user-pass-field",
+    "click-login": "#btn-do-signin",
+    "assert-login-success": "#hello-copy",
+    "click-orders-tab": "#records-tab",
+    "select-delayed-status": "#signout-action",
+    "choose-delayed-option": "#btn-do-signin"
+  }
+}

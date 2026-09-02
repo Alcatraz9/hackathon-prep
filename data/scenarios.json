@@ -1,0 +1,1913 @@
+{
+  "schema_version": 1,
+  "scenarios": {
+    "d1274702-114": {
+      "schema_version": 1,
+      "scenarioId": "d1274702-114",
+      "status": "APPROVED",
+      "prompt": "Log in, inspect orders, and update a delayed order",
+      "fixtureVersion": "v1",
+      "createdAt": 1788275536.1357546,
+      "updatedAt": 1788275536.1401217,
+      "scenarios": [
+        {
+          "scenarioId": "valid-login",
+          "scenario": "Valid login flow",
+          "stepDetails": [
+            {
+              "stepId": "login-email",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "email address input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "healer-test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-password",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "password input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "hunter2",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-submit",
+              "scenario": "Authenticate with valid credentials",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "sign-in button"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Sign in",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains",
+                "selector": "#status-msg",
+                "value": "Welcome back!"
+              }
+            },
+            {
+              "stepId": "login-status",
+              "scenario": "Authenticate with valid credentials",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "login result status"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "login result",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Welcome back!",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "Welcome back!"
+              },
+              "screenshot": {
+                "checkpointId": "login-success",
+                "fullPage": false
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "generated/d1274702-114.py",
+        "language": "python",
+        "status": "PENDING"
+      },
+      "description": "approved workflow"
+    },
+    "97e9dd2b-fd1": {
+      "schema_version": 1,
+      "scenarioId": "97e9dd2b-fd1",
+      "status": "APPROVED",
+      "prompt": "Review orders and update a delayed order",
+      "fixtureVersion": "v1",
+      "createdAt": 1788275595.52914,
+      "updatedAt": 1788275595.531915,
+      "scenarios": [
+        {
+          "scenarioId": "valid-login",
+          "scenario": "Valid login flow",
+          "stepDetails": [
+            {
+              "stepId": "login-email",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "email address input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "healer-test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-password",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "password input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "hunter2",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-submit",
+              "scenario": "Authenticate with valid credentials",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "sign-in button"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Sign in",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains",
+                "selector": "#status-msg",
+                "value": "Welcome back!"
+              }
+            },
+            {
+              "stepId": "login-status",
+              "scenario": "Authenticate with valid credentials",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "login result status"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "login result",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Welcome back!",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "Welcome back!"
+              },
+              "screenshot": {
+                "checkpointId": "login-success",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "orders-navigation",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-tab",
+                "intent": "Orders navigation tab"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Orders",
+                "input_type": null,
+                "ancestor": "dashboard",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-search",
+              "scenario": "Review and update an order",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#order-search",
+                "intent": "order search field"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "searchbox",
+                "label": "Search order or customer",
+                "input_type": "search",
+                "ancestor": "orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "NS-1002"
+            },
+            {
+              "stepId": "order-details",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": ".row-details",
+                "intent": "View details action for the filtered order"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "View details",
+                "input_type": null,
+                "ancestor": "orders-body",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-dialog",
+              "scenario": "Review and update an order",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#dialog-order",
+                "intent": "selected order details dialog"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "selected order",
+                "input_type": null,
+                "ancestor": "order-dialog",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "NS-1002",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "NS-1002"
+              },
+              "screenshot": {
+                "checkpointId": "order-details",
+                "fullPage": false
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "generated/97e9dd2b-fd1.py",
+        "language": "python",
+        "status": "PENDING"
+      }
+    },
+    "8b527638-7a0": {
+      "schema_version": 1,
+      "scenarioId": "8b527638-7a0",
+      "status": "APPROVED",
+      "prompt": "storage compatibility check",
+      "fixtureVersion": "v1",
+      "createdAt": 1788276492.3724015,
+      "updatedAt": 1788276492.3766267,
+      "scenarios": [
+        {
+          "scenarioId": "valid-login",
+          "scenario": "Valid login flow",
+          "stepDetails": [
+            {
+              "stepId": "login-email",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "email address input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "healer-test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-password",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "password input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "hunter2",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-submit",
+              "scenario": "Authenticate with valid credentials",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "sign-in button"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Sign in",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains",
+                "selector": "#status-msg",
+                "value": "Welcome back!"
+              }
+            },
+            {
+              "stepId": "login-status",
+              "scenario": "Authenticate with valid credentials",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "login result status"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "login result",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Welcome back!",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "Welcome back!"
+              },
+              "screenshot": {
+                "checkpointId": "login-success",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "orders-navigation",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-tab",
+                "intent": "Orders navigation tab"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Orders",
+                "input_type": null,
+                "ancestor": "dashboard",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-search",
+              "scenario": "Review and update an order",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#order-search",
+                "intent": "order search field"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "searchbox",
+                "label": "Search order or customer",
+                "input_type": "search",
+                "ancestor": "orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "NS-1002"
+            },
+            {
+              "stepId": "order-details",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": ".row-details",
+                "intent": "View details action for the filtered order"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "View details",
+                "input_type": null,
+                "ancestor": "orders-body",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-dialog",
+              "scenario": "Review and update an order",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#dialog-order",
+                "intent": "selected order details dialog"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "selected order",
+                "input_type": null,
+                "ancestor": "order-dialog",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "NS-1002",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "NS-1002"
+              },
+              "screenshot": {
+                "checkpointId": "order-details",
+                "fullPage": false
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "generated/8b527638-7a0.py",
+        "language": "python",
+        "status": "PENDING"
+      }
+    },
+    "041f4f03-563": {
+      "schema_version": 1,
+      "scenarioId": "041f4f03-563",
+      "status": "DRAFT",
+      "prompt": "Log in, inspect delayed orders, and open order details",
+      "fixtureVersion": "v1",
+      "createdAt": 1788277187.559472,
+      "updatedAt": 1788277187.559472,
+      "scenarios": [
+        {
+          "scenarioId": "valid-login",
+          "scenario": "Valid login flow",
+          "stepDetails": [
+            {
+              "stepId": "login-email",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "email address input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "healer-test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-password",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "password input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "hunter2",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-submit",
+              "scenario": "Authenticate with valid credentials",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "sign-in button"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Sign in",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains",
+                "selector": "#status-msg",
+                "value": "Welcome back!"
+              }
+            },
+            {
+              "stepId": "login-status",
+              "scenario": "Authenticate with valid credentials",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "login result status"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "login result",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Welcome back!",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "Welcome back!"
+              },
+              "screenshot": {
+                "checkpointId": "login-success",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "orders-navigation",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-tab",
+                "intent": "Orders navigation tab"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Orders",
+                "input_type": null,
+                "ancestor": "dashboard",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-search",
+              "scenario": "Review and update an order",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#order-search",
+                "intent": "order search field"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "searchbox",
+                "label": "Search order or customer",
+                "input_type": "search",
+                "ancestor": "orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "NS-1002"
+            },
+            {
+              "stepId": "order-details",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": ".row-details",
+                "intent": "View details action for the filtered order"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "View details",
+                "input_type": null,
+                "ancestor": "orders-body",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-dialog",
+              "scenario": "Review and update an order",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#dialog-order",
+                "intent": "selected order details dialog"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "selected order",
+                "input_type": null,
+                "ancestor": "order-dialog",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "NS-1002",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "NS-1002"
+              },
+              "screenshot": {
+                "checkpointId": "order-details",
+                "fullPage": false
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "generated/041f4f03-563.py",
+        "language": "python",
+        "status": "PENDING"
+      }
+    },
+    "3bbd56bf-efe": {
+      "schema_version": 1,
+      "scenarioId": "3bbd56bf-efe",
+      "status": "DRAFT",
+      "prompt": "local mock scenario",
+      "fixtureVersion": "v1",
+      "createdAt": 1788277709.5880356,
+      "updatedAt": 1788277709.5880356,
+      "scenarios": [
+        {
+          "scenarioId": "valid-login",
+          "scenario": "Valid login flow",
+          "stepDetails": [
+            {
+              "stepId": "login-email",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "email address input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "healer-test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-password",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "password input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "hunter2",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-submit",
+              "scenario": "Authenticate with valid credentials",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "sign-in button"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Sign in",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains",
+                "selector": "#status-msg",
+                "value": "Welcome back!"
+              }
+            },
+            {
+              "stepId": "login-status",
+              "scenario": "Authenticate with valid credentials",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "login result status"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "login result",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Welcome back!",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "Welcome back!"
+              },
+              "screenshot": {
+                "checkpointId": "login-success",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "orders-navigation",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-tab",
+                "intent": "Orders navigation tab"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Orders",
+                "input_type": null,
+                "ancestor": "dashboard",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-search",
+              "scenario": "Review and update an order",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#order-search",
+                "intent": "order search field"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "searchbox",
+                "label": "Search order or customer",
+                "input_type": "search",
+                "ancestor": "orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "NS-1002"
+            },
+            {
+              "stepId": "order-details",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": ".row-details",
+                "intent": "View details action for the filtered order"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "View details",
+                "input_type": null,
+                "ancestor": "orders-body",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-dialog",
+              "scenario": "Review and update an order",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#dialog-order",
+                "intent": "selected order details dialog"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "selected order",
+                "input_type": null,
+                "ancestor": "order-dialog",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "NS-1002",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "NS-1002"
+              },
+              "screenshot": {
+                "checkpointId": "order-details",
+                "fullPage": false
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "generated/3bbd56bf-efe.py",
+        "language": "python",
+        "status": "PENDING"
+      }
+    },
+    "0451c674-60a": {
+      "schema_version": 1,
+      "scenarioId": "0451c674-60a",
+      "status": "DRAFT",
+      "prompt": "AI scenario request",
+      "fixtureVersion": "v1",
+      "createdAt": 1788277710.8993971,
+      "updatedAt": 1788277710.8993974,
+      "scenarios": [
+        {
+          "scenario": "AI generated",
+          "stepDetails": [
+            {
+              "stepId": "ai-step",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#x"
+              },
+              "fingerprint": {
+                "tag": "button"
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "generated/0451c674-60a.py",
+        "language": "python",
+        "status": "PENDING"
+      },
+      "generation": {
+        "source": "groq",
+        "environment": "DEV"
+      }
+    },
+    "4a3f3b01-53d": {
+      "schema_version": 1,
+      "scenarioId": "4a3f3b01-53d",
+      "status": "DRAFT",
+      "prompt": "Log in, inspect delayed orders, and open order details",
+      "fixtureVersion": "v1",
+      "createdAt": 1788277840.2821167,
+      "updatedAt": 1788277840.2821167,
+      "scenarios": [
+        {
+          "scenarioId": "valid-login",
+          "scenario": "Valid login flow",
+          "stepDetails": [
+            {
+              "stepId": "login-email",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "email address input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "healer-test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-password",
+              "scenario": "Authenticate with valid credentials",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "password input"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "textbox",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "hunter2",
+              "postcondition": {
+                "type": "value_present"
+              }
+            },
+            {
+              "stepId": "login-submit",
+              "scenario": "Authenticate with valid credentials",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "sign-in button"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Sign in",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains",
+                "selector": "#status-msg",
+                "value": "Welcome back!"
+              }
+            },
+            {
+              "stepId": "login-status",
+              "scenario": "Authenticate with valid credentials",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "login result status"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "login result",
+                "input_type": null,
+                "ancestor": "login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Welcome back!",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "Welcome back!"
+              },
+              "screenshot": {
+                "checkpointId": "login-success",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "orders-navigation",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-tab",
+                "intent": "Orders navigation tab"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "Orders",
+                "input_type": null,
+                "ancestor": "dashboard",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-search",
+              "scenario": "Review and update an order",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#order-search",
+                "intent": "order search field"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "searchbox",
+                "label": "Search order or customer",
+                "input_type": "search",
+                "ancestor": "orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "NS-1002"
+            },
+            {
+              "stepId": "order-details",
+              "scenario": "Review and update an order",
+              "action": "click",
+              "selectorDetails": {
+                "selector": ".row-details",
+                "intent": "View details action for the filtered order"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "button",
+                "label": "View details",
+                "input_type": null,
+                "ancestor": "orders-body",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              }
+            },
+            {
+              "stepId": "order-dialog",
+              "scenario": "Review and update an order",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#dialog-order",
+                "intent": "selected order details dialog"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "status",
+                "label": "selected order",
+                "input_type": null,
+                "ancestor": "order-dialog",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "NS-1002",
+              "postcondition": {
+                "type": "text_contains",
+                "value": "NS-1002"
+              },
+              "screenshot": {
+                "checkpointId": "order-details",
+                "fullPage": false
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "generated/4a3f3b01-53d.py",
+        "language": "python",
+        "status": "PENDING"
+      }
+    },
+    "648e6a14-a08": {
+      "schema_version": 1,
+      "scenarioId": "648e6a14-a08",
+      "status": "APPROVED",
+      "prompt": "Log in, inspect delayed orders, and open order details",
+      "fixtureVersion": "v1",
+      "createdAt": 1788278115.6904137,
+      "updatedAt": 1788279046.8420725,
+      "scenarios": [
+        {
+          "scenario": "login-and-inspect-delayed-orders",
+          "stepDetails": [
+            {
+              "stepId": "fill-email",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "enter email address"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "form#login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "fill-password",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "enter password"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "form#login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "Secret123",
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "click-login",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "submit login form"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "",
+                "label": "Sign in",
+                "input_type": "",
+                "ancestor": "section#login-panel",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "assert-login-success",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "verify login success message"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "section#login-panel",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Welcome back!",
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "click-orders-tab",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-tab",
+                "intent": "navigate to Orders view"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "",
+                "label": "Orders",
+                "input_type": "",
+                "ancestor": "nav.nav",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "select-delayed-status",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#order-status",
+                "intent": "open status filter dropdown"
+              },
+              "fingerprint": {
+                "tag": "select",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "section#orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "choose-delayed-option",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#order-status option[value=\"delayed\"]",
+                "intent": "choose Delayed status"
+              },
+              "fingerprint": {
+                "tag": "option",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "select#order-status",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "assert-first-row-delayed",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#orders-body tr:first-child td:nth-child(3)",
+                "intent": "verify first order status is Delayed"
+              },
+              "fingerprint": {
+                "tag": "td",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "tr:first-child",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Delayed",
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "click-first-view-details",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-body tr:first-child .row-details",
+                "intent": "open order details dialog"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "",
+                "label": "View details",
+                "input_type": "",
+                "ancestor": "tr:first-child",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "assert-dialog-order",
+              "scenario": "login-and-inspect-delayed-orders",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#dialog-order",
+                "intent": "verify order id and customer in dialog"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "dialog#order-dialog",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "-",
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            }
+          ]
+        },
+        {
+          "scenario": "login-failure-missing-password",
+          "stepDetails": [
+            {
+              "stepId": "fill-email-only",
+              "scenario": "login-failure-missing-password",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "enter email address"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "form#login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "click-login-no-pass",
+              "scenario": "login-failure-missing-password",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "attempt login with missing password"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "",
+                "label": "Sign in",
+                "input_type": "",
+                "ancestor": "section#login-panel",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "assert-login-error",
+              "scenario": "login-failure-missing-password",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#status-msg",
+                "intent": "verify error message"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "section#login-panel",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "Please fill all fields",
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            }
+          ]
+        },
+        {
+          "scenario": "filter-no-results",
+          "stepDetails": [
+            {
+              "stepId": "fill-email-full",
+              "scenario": "filter-no-results",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#email-input",
+                "intent": "enter email address"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "",
+                "label": "Email",
+                "input_type": "email",
+                "ancestor": "form#login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "test@example.com",
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "fill-password-full",
+              "scenario": "filter-no-results",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#password-input",
+                "intent": "enter password"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "",
+                "label": "Password",
+                "input_type": "password",
+                "ancestor": "form#login-form",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "Secret123",
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "click-login-full",
+              "scenario": "filter-no-results",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#login-submit",
+                "intent": "submit login"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "",
+                "label": "Sign in",
+                "input_type": "",
+                "ancestor": "section#login-panel",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "click-orders-tab-full",
+              "scenario": "filter-no-results",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#orders-tab",
+                "intent": "navigate to Orders"
+              },
+              "fingerprint": {
+                "tag": "button",
+                "role": "",
+                "label": "Orders",
+                "input_type": "",
+                "ancestor": "nav.nav",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "select-ready-status",
+              "scenario": "filter-no-results",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#order-status",
+                "intent": "open status filter"
+              },
+              "fingerprint": {
+                "tag": "select",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "section#orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "choose-ready-option",
+              "scenario": "filter-no-results",
+              "action": "click",
+              "selectorDetails": {
+                "selector": "#order-status option[value=\"ready\"]",
+                "intent": "choose Ready status"
+              },
+              "fingerprint": {
+                "tag": "option",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "select#order-status",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "set-date-filter",
+              "scenario": "filter-no-results",
+              "action": "fill",
+              "selectorDetails": {
+                "selector": "#order-date",
+                "intent": "set a date with no matching orders"
+              },
+              "fingerprint": {
+                "tag": "input",
+                "role": "",
+                "label": "",
+                "input_type": "date",
+                "ancestor": "section#orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "value": "2099-01-01",
+              "postcondition": {
+                "type": "value_present"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            },
+            {
+              "stepId": "assert-no-results",
+              "scenario": "filter-no-results",
+              "action": "assert_text",
+              "selectorDetails": {
+                "selector": "#empty-state",
+                "intent": "verify empty state message"
+              },
+              "fingerprint": {
+                "tag": "p",
+                "role": "",
+                "label": "",
+                "input_type": "",
+                "ancestor": "section#orders-view",
+                "volatile_attributes": [
+                  "id",
+                  "class",
+                  "name"
+                ]
+              },
+              "expected_contains": "No orders match your filters",
+              "postcondition": {
+                "type": "text_contains"
+              },
+              "screenshot": {
+                "checkpointId": "",
+                "fullPage": false
+              }
+            }
+          ]
+        }
+      ],
+      "generatedTest": {
+        "path": "artifacts/generated/648e6a14-a08.py",
+        "language": "python",
+        "status": "GENERATED"
+      },
+      "generation": {
+        "source": "groq",
+        "environment": "DEV"
+      }
+    }
+  }
+}
